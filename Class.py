@@ -41,11 +41,3 @@ class Pessoa:
             print('Os dois tem a mesma idade.')
         elif idade < self.idade:
             print(f'Essa outra pessoa e mais nova do que {self.nome}')
-
-pessoas = []
-p = Pessoa('Venicios', 25, 1.88, 70)
-pessoas.append(p)
-p = Pessoa('Thomaz', 24, 1.75, 80)
-pessoas.append(p)
-
-# pessoas[0].compara_idade(pessoas[1].idade)
