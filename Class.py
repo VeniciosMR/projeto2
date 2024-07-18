@@ -19,17 +19,17 @@ class Pessoa:
     
     def imc_longo(self):
         if self.imc() < 18.5:
-            return "Abaixo do peso"
+            return "abaixo do peso"
         elif 18.5 <= self.imc() < 25:
-            return "Peso normal"
+            return "peso normal"
         elif 25 <= self.imc() < 30:
-            return "Sobrepeso"
+            return "sobrepeso"
         elif 30 <= self.imc() < 35:
-            return "Obesidade grau I"
+            return "obesidade grau I"
         elif 35 <= self.imc() < 40:
-            return "Obesidade grau II"
+            return "obesidade grau II"
         else:
-            return "Obesidade grau III"
+            return "obesidade grau III"
         
     def apresentar(self):
         print(f'Aoba!!! Me chamo {self.nome} e tenho {self.idade} anos.')
