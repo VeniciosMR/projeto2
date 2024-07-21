@@ -8,23 +8,23 @@ def nova_pessoa():
         print('Nome invalido! Deve conter apenas letras e espaço.')
         nome = input('Digite o nome: ')
     nome = nome.capitalize()
-    
+
     idade = input('Digite a idade: ')
-    while not re.match(r"^[0-9]+$", idade) or -1 < int(idade) > 135:
+    while not re.match(r"^[0-9]+$", idade) and -1 < int(idade) > 135:
         print('Idade invalida! Deve conter apenas numeros.')
         idade = input('Digite a idade: ')
     idade = int(idade)
 
     altura = input('Digite a altura em metros: ')
     altura = re.sub(r',', '.', altura)
-    while not re.match(r"^[0-2]+[,.][0-9]+$", altura) or 0.1< float(altura) >2.8:
+    while not re.match(r"^[0-2]+[,.][0-9]+$", altura) and 0.1< float(altura) >2.8:
         print('altura invalida! Deve conter apenas numeros, com ponto ou virgula. Ex: 1,65')
         altura = input('Digite a altura em metros: ')
         altura = re.sub(r',', '.', altura)
     altura = float(altura)
 
     peso = input('Digite o peso: ')
-    while not re.match(r"^[0-9]+$", peso) or 0 < int(peso) > 600:
+    while not re.match(r"^[0-9]+$", peso) and 0 < int(peso) > 600:
         print('Valor invalido! Deve conter apenas numeros.')
         peso = input('Digite o peso: ')
     peso = int(peso)
