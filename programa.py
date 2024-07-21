@@ -1,33 +1,31 @@
-from Class import Pessoa
-import random
+from Class import *
 
+# Adicionando pessoas
 pessoas = []
-p = Pessoa('Venicios', 25, 1.88, 70)
+pessoas.append(nova_pessoa())
+p = Pessoa('Thomaz', 2077, 1.75, 82, '01/01/-0053')
 pessoas.append(p)
-p = Pessoa('Thomaz', 2077, 1.75, 82)
+p = Pessoa('Heloisa', 23, 1.6, 68, '30/08/2000')
 pessoas.append(p)
-p = Pessoa('Heloisa', 23, 1.6, 68)
+p = Pessoa('Henzo', 13, 1.47, 59, '01/01/2001')
 pessoas.append(p)
-p = Pessoa('Henzo', 13, 1.47, 59)
-pessoas.append(p)
-p = Pessoa('Junior', 15, 1.9, 80)
+p = Pessoa('Junior', 15, 1.9, 80, '01/01/2001')
 pessoas.append(p)
 
 # Mostra todos da lista
-print('Pessoas da lista:')
+print('\nPessoas da lista:')
 for pessoa in pessoas:
-    print(pessoa.nome.capitalize())
+    print(pessoa.nome)
 # Mostra apenas quem e de maior
 print('\nPessoas maiores de idade na lista:')
 for pessoa in pessoas:
     if pessoa.idade > 17:
-        print(pessoa.nome.capitalize())
+        print(pessoa.nome)
 
 
-# Dados de alguem da lista
-# Apresentação de uma pessoa aleatoria
-p = random.choice(pessoas)
-print('\nDados de alguem da lista:')
+# Dados da pessoa nova
+p = pessoas[0]
+print(f'\nDados de {p.nome}:')
 print(f'Olá, meu nome é {p.nome}, tenho {p.idade} anos.')
 
 # Mostar IMC da pessoa aleatoria e sua faixa de peso

@@ -1,11 +1,50 @@
 # Programa da segunda atividade do curso Ponta Pé Dev
+import re
+
+def nova_pessoa():
+    print('Adicionando uma nova pessoa!')
+    nome = input('Digite o nome: ')
+    while not re.match(r"^[A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚ ]+$", nome):
+        print('Nome invalido! Deve conter apenas letras e espaço.')
+        nome = input('Digite o nome: ')
+    nome = nome.capitalize()
+    
+    idade = input('Digite a idade: ')
+    while not re.match(r"^[0-9]+$", idade) or -1 < int(idade) > 135:
+        print('Idade invalida! Deve conter apenas numeros.')
+        idade = input('Digite a idade: ')
+    idade = int(idade)
+
+    altura = input('Digite a altura em metros: ')
+    altura = re.sub(r',', '.', altura)
+    while not re.match(r"^[0-2]+[,.][0-9]+$", altura) or 0.1< float(altura) >2.8:
+        print('altura invalida! Deve conter apenas numeros, com ponto ou virgula. Ex: 1,65')
+        altura = input('Digite a altura em metros: ')
+        altura = re.sub(r',', '.', altura)
+    altura = float(altura)
+
+    peso = input('Digite o peso: ')
+    while not re.match(r"^[0-9]+$", peso) or 0 < int(peso) > 600:
+        print('Valor invalido! Deve conter apenas numeros.')
+        peso = input('Digite o peso: ')
+    peso = int(peso)
+
+    nascimento = input('Digite a data de nascimento (DD/MM/AAAA): ')
+    while not re.match(r"^[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}$", nascimento):
+        print('Data invalida! Deve conter numeros e barra. Ex 01/01/2001')
+        nascimento = input('Digite a data de nascimento: ')
+    
+    print('Nova pessoa adicionada!')
+    
+    return(Pessoa(nome, idade, altura, peso, nascimento))
 
 class Pessoa:
-    def __init__(self, nome:str, idade:int, altura:float, peso:float):
+    def __init__(self, nome:str, idade:int, altura:float, peso:float, nascimento:str):
         self.nome = nome
         self.idade = idade
         self.altura = altura
         self.peso = peso
+        self.nascimento = nascimento
     
     def eh_maior(self):
         if self.idade > 17:
